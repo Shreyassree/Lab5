@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+class Employee
+{
+   char emp_name[30],dep[30];
+   int emp_number;
+   float basic, da, it, gross_salary,net_salary, hra,ta;
+   public:
+    Employee(char emp_name[50],int emp_id, char dept[20])
+    {
+        cout<<"Employee name: "<<emp_name;
+        cout<<"Employee ID: "<<emp_number;
+        cout<<"Department: "<<dep;
+    }
+   Employee(int a){
+      cout<<"Basic salary: "<<basic;
+      da = basic * 0.5;
+      hra=basic*0.3;
+      ta=basic*0.1;
+      gross_salary = basic + da+ hra+ ta;
+   }
+   void display_emp_details(int count){
+      cout<<"\nEmployee Name    : "<<emp_name;
+      cout<<"\nEmployee ID      : "<<emp_number;
+      cout<<"\nDepartment       : "<<dep;
+      cout<<"\nBasic salary     : "<<basic;
+      cout<<"\nDA               : "<<da;
+      cout<<"\nHRA              : "<<hra;
+      cout<<"\nTA               : "<<ta;
+      cout<<"\nGross salary     : "<<gross_salary;
+      cout<<"\n--------------------------\n";
+   }
+};
+   int main(){
+   char emp_name[20],dep[20];
+   int emp_number,basic;
+   cout<<"Employee Name: ";
+   cin>>emp_name;
+   cout<<"Employee ID: ";
+   cin>>emp_number;
+   cout<<"Department: ";
+   cin>>dep;
+   cout<<"Basic salary: ";
+   cin>>basic;
+   Employee a(emp_name,emp_number,dep);
+   Employee E(basic);
+   E.display();
+    
+}
